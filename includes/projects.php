@@ -15,7 +15,7 @@ $projects = [
         'category' => 'HTML / CSS',
         'year' => '2026',
         'image' => '../images/cafe-site.png', // 画像パスを指定してください
-        'url' => 'https://masafuminogawa232.github.io/cafe-site?v=12349', // 詳細ページや実際のサイトURL
+        'url' => 'https://masafuminogawa232.github.io/cafe-site?v=12351', // 詳細ページや実際のサイトURL
         'description' => '自家焙煎コーデーを提供するカフェの店舗紹介サイト。' .
             '心地よい空間と一杯のこだわりが伝わるよう、Google Fontsや落ち着いた配色を用いた' .
             '洗練されたデザイン・レスポンシブ設計を実装しました。'

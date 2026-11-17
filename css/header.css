@@ -20,6 +20,7 @@ Header Style
   letter-spacing: 0.2em;
   color: #111;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .site-header .site-nav ul {
@@ -43,16 +44,16 @@ Header Style
 
 @media (max-width: 768px) {
   .site-header {
-    padding: 20px 30px;
-    align-items: end;
+    padding: 20px 30px 40px;
+    align-items: baseline;
   }
   .site-header .logo {
-    font-size: 1.2rem;
+    font-size: 0.6rem;
   }
   .site-header .site-nav ul {
     gap: 20px;
   }
   .site-header .site-nav ul li a {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 }/*# sourceMappingURL=header.css.map */
