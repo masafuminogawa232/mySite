@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* WORKS セクション */
+.works-section {
+  padding: 120px 0;
+}
+
+/* 作品数が増えても自動で綺麗に折り返すグリッド設計 */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 48px 36px;
+}
+
+.work-card {
+  border: solid 1px #E5E2DC;
+}
+
+.work-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: #E5E2DC;
+}
+
+.work-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background-color: #E5E2DC; /* 画像未設定時のプレースホルダー色 */
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.work-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-link:hover .work-image-wrapper img {
+  transform: scale(1.04);
+}
+
+.work-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: #8E877E;
+  margin-bottom: 8px;
+}
+
+.work-title {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", serif;
+  font-size: 1.25rem;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  color: #222222;
+  margin: 0 0 10px;
+  transition: opacity 0.3s;
+}
+
+.work-link:hover .work-title {
+  opacity: 0.7;
+}
+
+.work-desc {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: #555555;
+  margin: 0;
+}
+
+/* =========================================
+   WORKS：スクロール出現アニメーション（完全版）
+   ========================================= */
+/* 初期状態 */
+.works-section .section-header,
+.works-section .work-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 3s cubic-bezier(0.16, 1, 0.3, 1), transform 3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* 出現後の状態 */
+.works-section .section-header.is-visible,
+.works-section .work-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* カードごとの時間差 */
+.works-section .work-card:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.works-section .work-card:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.works-section .work-card:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.works-section .work-card:nth-child(4) {
+  transition-delay: 0.05s;
+}
+
+.works-section .work-card:nth-child(5) {
+  transition-delay: 0.15s;
+}
+
+.works-section .work-card:nth-child(6) {
+  transition-delay: 0.25s;
+}/*# sourceMappingURL=works.css.map */

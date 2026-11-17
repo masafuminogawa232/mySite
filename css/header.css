@@ -1,0 +1,58 @@
+/*---------------------------------------------------------
+Header Style
+--------------------------------------------------------*/
+.site-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.site-header .logo {
+  font-family: serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.2em;
+  color: #111;
+  font-weight: 700;
+}
+
+.site-header .site-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.site-header .site-nav ul li a {
+  text-decoration: none;
+  color: #444;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.site-header .site-nav ul li a:hover {
+  color: #bfa17f;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 20px 30px;
+    align-items: end;
+  }
+  .site-header .logo {
+    font-size: 1.2rem;
+  }
+  .site-header .site-nav ul {
+    gap: 20px;
+  }
+  .site-header .site-nav ul li a {
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=header.css.map */

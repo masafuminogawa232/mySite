@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# 環境変数（DBのパスワードなど）
+.env
+.env.local
+.env.*.local
+
+# PHP Composer
+/vendor/
+
+# IDE（開発ツール）
+.idea/
+.vscode/
+.vs/

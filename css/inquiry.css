@@ -1,0 +1,198 @@
+@charset "UTF-8";
+/* ベーススタイル（既存サイトと統一） */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #F8F7F4;
+  color: #222222;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.contact-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 100px 24px 120px;
+}
+
+/* ヘッダー・戻るリンク */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #8E877E;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 60px;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #222222;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.page-title {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", serif;
+  font-size: 2.25rem;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  margin: 0 0 12px;
+}
+
+.page-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: #8E877E;
+  margin: 0 0 24px;
+}
+
+.page-lead {
+  font-size: 0.9rem;
+  line-height: 2;
+  color: #555555;
+  margin: 0;
+}
+
+/* エラーメッセージ枠 */
+.error-box {
+  background-color: #FDF3F2;
+  border-left: 3px solid #C85A53;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+}
+
+.error-box ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #A83E37;
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+/* フォーム要素 */
+.form-group {
+  margin-bottom: 36px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  color: #222222;
+}
+
+.badge-required {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  background-color: #8E877E;
+  padding: 2px 8px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.badge-optional {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #8E877E;
+  border: 1px solid #8E877E;
+  padding: 1px 7px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.form-control {
+  width: 100%;
+  padding: 16px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #222222;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(142, 135, 126, 0.35);
+  border-radius: 0;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #8E877E;
+}
+
+textarea.form-control {
+  min-height: 180px;
+  resize: vertical;
+  line-height: 1.8;
+}
+
+/* 送信ボタン */
+.form-submit {
+  text-align: center;
+  margin-top: 56px;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-width: 260px;
+  padding: 18px 48px;
+  background-color: transparent;
+  border: 1px solid #8E877E;
+  color: #222222;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  cursor: pointer;
+  transition: background-color 0.35s, color 0.35s;
+}
+
+.btn-submit:hover {
+  background-color: #8E877E;
+  color: #FFFFFF;
+}
+
+.btn-return {
+  text-decoration: none;
+}
+
+/* 送信完了画面 */
+.thanks-box {
+  text-align: center;
+  padding: 64px 24px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(142, 135, 126, 0.25);
+}
+
+.thanks-title {
+  font-family: "YuMincho", "Hiragino Mincho ProN", serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+  margin: 0 0 20px;
+}
+
+.thanks-text {
+  font-size: 0.9rem;
+  line-height: 2;
+  color: #555555;
+  margin: 0 0 40px;
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 60px 20px 80px;
+  }
+  .btn-submit {
+    width: 100%;
+  }
+}/*# sourceMappingURL=inquiry.css.map */

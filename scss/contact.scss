@@ -1,0 +1,30 @@
+/* CONTACT セクション */
+.contact-section {
+    padding: 120px 0 140px;
+    border-top: 1px solid rgba(142, 135, 126, 0.25);
+    text-align: center;
+}
+
+.contact-heading {
+    font-family: "YuMincho", "Hiragino Mincho ProN", serif;
+    font-size: 1.75rem;
+    font-weight: normal;
+    letter-spacing: 0.12em;
+    color: #222222;
+    margin: 16px 0 28px;
+}
+
+.contact-text {
+    font-size: 0.925rem;
+    line-height: 2.1;
+    color: #4A4A4A;
+    margin: 0 auto 48px;
+}
+
+.btn-contact .arrow {
+    transition: transform 0.35s;
+}
+
+.btn-contact:hover .arrow {
+    transform: translateX(5px);
+}

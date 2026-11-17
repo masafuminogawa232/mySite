@@ -1,0 +1,200 @@
+/*---------------------------------------------------------
+Masafumi's Site style common
+--------------------------------------------------------*/
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; 
+  background-color: #111;
+}
+
+.screen-wrapper {
+    scroll-behavior: smooth;
+}
+
+.screen-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    animation: bgInvert 1.0s ease-out 6.0s forwards;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.title-area, .main-content, .works-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+/* ① 一幕目：タイトル */
+.antique-text {
+    font-family: "Cinzel", serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    display: inline-block;
+    text-transform: uppercase; 
+    opacity: 0; 
+    color: #e5dac9;
+    
+    background: linear-gradient(
+        120deg, 
+        transparent 35%, 
+        #ffffff 50%, 
+        transparent 65%
+    ) no-repeat;
+    background-size: 250% 100%;
+    background-position: 200% center; 
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    animation: 
+        fadeIn 1.0s ease-out 1.0s forwards,
+        shine 0.7s ease-in-out 1.3s forwards,
+        fadeOut 1.0s ease-in 2.0s forwards;
+}
+
+/* ② 二幕目：文章 */
+.main-content {
+    font-family: serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    opacity: 0; 
+    animation: 
+        contentFadeIn 1.0s ease-out 3.0s forwards,
+        fadeOut 1.0s ease-in 4.0s forwards;
+}
+
+/* ③ 三幕目：文章 */
+.works-content {
+    opacity: 0;
+    animation: 
+        contentFadeIn 1.0s ease-out 6.0s forwards,
+        fadeOut 1.0s ease-in 9.0s forwards;
+}
+
+.reveal-text {
+    color: #111111; 
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+    font-weight: 300;
+}
+
+/* ④ 四幕目：本編全体のフェードイン */
+.site-main-content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    animation: mainSiteFadeIn 1.5s ease-out 10.0s forwards;
+}
+
+/* --------------------------------------------------
+   共通アニメーション用 キーフレーム定義
+-------------------------------------------------- */
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes shine { 0% { background-position: 200% center; } 100% { background-position: -150% center; } }
+@keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes contentFadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+@keyframes bgInvert {
+    0% { background-color: #111; }
+    100% { background-color: #f6f5f3; }
+}
+
+@keyframes mainSiteFadeIn {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* スクロールロック用の制御クラス（10秒間はスクロール不可） */
+.screen-wrapper.site-scroll-lock {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 10秒後にこの状態になり、ページ全体のスクロールが解禁される */
+.screen-wrapper:not(.site-scroll-lock) {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.site-main-content {
+    width: 100%;
+    /* height: 100vh; から以下に変更して縦に伸びるようにします */
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    animation: mainSiteFadeIn 1.5s ease-out 10.0s forwards;
+}
+
+/* 共通コンテナ */
+.container {
+    // max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* セクション見出し */
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-title {
+    font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", serif;
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 0.15em;
+    color: #222222;
+    margin: 0 0 8px;
+}
+
+.section-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: #8E877E;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .works-section,
+    .contact-section {
+        padding: 80px 0;
+    }
+    .pc-only {
+        display: none;
+    }
+    .reveal-text {
+        font-size: 1.5rem;
+    }
+}

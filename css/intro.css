@@ -1,0 +1,151 @@
+@charset "UTF-8";
+/*---------------------------------------------------------
+Intro & Eyecatch Section Style
+--------------------------------------------------------*/
+.intro-section {
+  width: 100%;
+  padding: 160px 20px; /* 上下にゆったりとした贅沢な余白を確保 */
+  background-color: #f6f5f3; /* 背景は洗練されたホワイトベージュ */
+  display: flex;
+  justify-content: center;
+}
+
+.intro-container {
+  max-width: 800px; /* 読みやすさを保つための幅制限 */
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* アイキャッチの正円形切り抜き */
+.eyecatch-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* 正円形にする設定 */
+  overflow: hidden;
+  margin-bottom: 60px; /* 下の文字との間の美しい余白 */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+.eyecatch-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* キャッチコピー部分 */
+.intro-caption {
+  margin-bottom: 40px;
+}
+
+.intro-title {
+  font-size: 1.8rem;
+  color: #111111;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.intro-subtitle {
+  font-family: "Vidaloka", serif;
+  font-size: 0.8rem;
+  color: #bfa17f; /* 高級感のあるゴールドベージュ */
+  letter-spacing: 0.25em;
+}
+
+/* リード文部分 */
+.intro-lead {
+  font-size: 1rem;
+  color: #444444;
+  line-height: 2; /* 行間を広げて洗練された印象に */
+  letter-spacing: 0.08em;
+}
+
+.intro-lead p {
+  margin-bottom: 24px;
+}
+
+.intro-lead .lead-to-works {
+  margin-top: 40px;
+  font-weight: 500;
+  color: #111111;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 100px 30px;
+  }
+  .eyecatch-circle {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 40px;
+  }
+  .intro-title {
+    font-size: 1.4rem;
+  }
+  .intro-lead {
+    font-size: 0.95rem;
+    text-align: left; /* スマホでは左寄せの方が読みやすくなります */
+  }
+}
+/* =========================================
+   INTRO：スクロール出現アニメーション（完全版）
+   ========================================= */
+/* ① アイキャッチ画像：ぼかし＋透明＋少し下から、ピントが合いながら出現 */
+.intro-section .eyecatch-circle {
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateY(30px) scale(1.05);
+  transition: opacity 3s cubic-bezier(0.16, 1, 0.3, 1), filter 3s cubic-bezier(0.16, 1, 0.3, 1), transform 3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, filter, transform;
+  transition-delay: 0s;
+}
+
+.intro-section .eyecatch-circle.is-visible {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0) scale(1);
+}
+
+/* ② テキスト・矢印類：下から上へゆっくり出現 */
+.intro-section .intro-caption,
+.intro-section .intro-lead p,
+.intro-section .scroll-arrow-line {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 3s cubic-bezier(0.16, 1, 0.3, 1), transform 3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.intro-section .intro-caption.is-visible,
+.intro-section .intro-lead p.is-visible,
+.intro-section .scroll-arrow-line.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ③ 上から順番に出現させる時間差（ディレイ） */
+.intro-section .intro-caption {
+  transition-delay: 0.15s;
+}
+
+.intro-section .intro-lead p:nth-child(1) {
+  transition-delay: 0.25s;
+}
+
+.intro-section .intro-lead p:nth-child(2) {
+  transition-delay: 0.35s;
+}
+
+.intro-section .intro-lead p:nth-child(3) {
+  transition-delay: 0.45s;
+}
+
+.intro-section .scroll-arrow-line {
+  transition-delay: 0.55s;
+}/*# sourceMappingURL=intro.css.map */
