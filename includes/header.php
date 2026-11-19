@@ -5,8 +5,8 @@
     <a href="index.php" class="logo">M. NOGAWA</a>
     <nav class="site-nav" aria-label="メインナビゲーション">
         <ul>
-            <li><a href="index.php#about">About</a></li>
-            <li><a href="index.php#works">Works</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#works">Works</a></li>
             <li><a href="inquiry.php" class="btn-contact">Contact</a></li>
         </ul>
     </nav>
