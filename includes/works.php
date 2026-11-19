@@ -1,3 +1,5 @@
+<?php if (count(get_included_files()) === 1) { http_response_code(403); exit; } ?>
+
 <!-- WORKS セクション -->
 <section id="works" class="works-section">
     <div class="container">
@@ -9,8 +11,12 @@
         <!-- 作品一覧グリッド -->
         <div class="works-grid">
             <?php foreach ($projects as $project): ?>
+                <?php
+                // 安全なURLスキーム（httpまたはhttps）かチェック
+                $safe_url = preg_match('/^https?:\/\//i', $project['url']) ? $project['url'] : '#';
+                ?>
                 <article class="work-card">
-                    <a href="<?php echo htmlspecialchars($project['url'], ENT_QUOTES, 'UTF-8'); ?>" class="work-link">
+                    <a href="<?php echo htmlspecialchars($safe_url, ENT_QUOTES, 'UTF-8'); ?>" class="work-link" target="_blank" rel="noopener noreferrer">
                         <div class="work-image-wrapper">
                             <img src="<?php echo htmlspecialchars($project['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($project['title'], ENT_QUOTES, 'UTF-8'); ?>">
                         </div>
@@ -24,12 +30,5 @@
                 </article>
             <?php endforeach; ?>
         </div>
-
-        <!-- 将来作品が増えた時用のアーカイブボタン（必要に応じてコメント解除） -->
-        <!--
-        <div class="works-more">
-            <a href="works.php" class="btn-outline">VIEW ALL ARCHIVES</a>
-        </div>
-        -->
     </div>
 </section>

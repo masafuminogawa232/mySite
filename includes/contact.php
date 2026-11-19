@@ -1,3 +1,5 @@
+<?php if (count(get_included_files()) === 1) { http_response_code(403); exit; } ?>
+
 <!-- CONTACT セクション（お問い合わせページへの誘導） -->
 <section id="contact" class="contact-section">
     <div class="container">

@@ -1,3 +1,11 @@
+<?php
+// クリックジャッキング対策（他サイトのiframe内での表示を禁止）
+header('X-Frame-Options: DENY');
+// MIMEタイプスニッフィング対策（ファイルの誤認実行を防止）
+header('X-Content-Type-Options: nosniff');
+// リファラー情報の制限（外部リンク遷移時の情報漏洩を防止）
+header('Referrer-Policy: strict-origin-when-cross-origin');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -46,16 +54,15 @@
             <!-- ④ 四幕目（本編）：ここから下へスクロール可能になります -->
             <div class="site-main-content">
                 
-                <?php include './includes/header.php'; ?>
+                <?php include __DIR__ . '/includes/header.php'; ?>
                 
-                <?php include './includes/mainvisual.php'; ?>
+                <?php include __DIR__ . '/includes/mainvisual.php'; ?>
                     
-                <?php include './includes/intro.php'; ?>
+                <?php include __DIR__ . '/includes/intro.php'; ?>
 
-                <?php include './includes/projects.php'; ?>
+                <?php include __DIR__ . '/includes/projects.php'; ?>
 
-                <?php include './includes/works.php'; ?>
-
+                <?php include __DIR__ . '/includes/works.php'; ?>
 
             </div>
 

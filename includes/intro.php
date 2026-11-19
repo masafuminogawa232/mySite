@@ -1,3 +1,5 @@
+<?php if (count(get_included_files()) === 1) { http_response_code(403); exit; } ?>
+
 <!-- イントロダクションセクション -->
 <section id="about" class="intro-section">
     <div class="intro-container">

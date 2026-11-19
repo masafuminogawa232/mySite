@@ -1,3 +1,5 @@
+<?php if (count(get_included_files()) === 1) { http_response_code(403); exit; } ?>
+
 <?php
 
 // 制作実績データ（作品が増えたらこの配列に追加するだけでOKです）
@@ -16,7 +18,7 @@ $projects = [
         'year' => '2026',
         'image' => '../images/cafe-site.png', // 画像パスを指定してください
         'url' => 'https://masafuminogawa232.github.io/cafe-site?v=12352', // 詳細ページや実際のサイトURL
-        'description' => '自家焙煎コーデーを提供するカフェの店舗紹介サイト。' .
+        'description' => '自家焙煎コーヒーを提供するカフェの店舗紹介サイト。' .
             '心地よい空間と一杯のこだわりが伝わるよう、Google Fontsや落ち着いた配色を用いた' .
             '洗練されたデザイン・レスポンシブ設計を実装しました。'
     ],
